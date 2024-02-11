@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "55f34f53-b70a-46cb-9fc6-fd16fa61fb06",
+		"name": "manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32722295",
+		"_collection_link": "https://universal-astronaut-743349.postman.co/workspace/e4af8ee5-8665-4f2f-b55d-3e07ebd571f1/collection/32722295-55f34f53-b70a-46cb-9fc6-fd16fa61fb06?action=share&source=collection_link&creator=32722295"
+	},
+	"item": [
+		{
+			"name": "get-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/manager/get-users?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"get-users"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-assignment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_chat_id\":\"3\",\n    \"template_id\":6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/delete-assignment?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"delete-assignment"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign-template",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_chat_id\":\"3\",\n    \"template_id\":6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/assign-template?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"assign-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-template",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"template_id\":13\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/delete-template?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"delete-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-template",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"days_limit\":60,\n    \"data_limit\":200,\n    \"price\":50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/add-template?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"add-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unbann-user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_chat_id\":\"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/unbann-user?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"unbann-user"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bann-user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_chat_id\":\"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/bann-user?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"bann-user"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admit-user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_chat_id\":\"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/admit-user?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"admit-user"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alter-user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_chat_id\":\"3\",\n    \"rule\":\"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/alter-user?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"alter-user"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-admins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/manager/get-admins?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"get-admins"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-banned-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/manager/get-banned-users?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"get-banned-users"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-none-admit-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/manager/get-none-admit-users?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"get-none-admit-users"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/manager/get-templates?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"get-templates"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/manager/get-template?chat_id=1&template_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"get-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						},
+						{
+							"key": "template_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

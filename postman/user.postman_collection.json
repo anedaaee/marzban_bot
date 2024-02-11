@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "4dd955d8-1be1-4d80-8740-87f465f23915",
+		"name": "user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32722295",
+		"_collection_link": "https://universal-astronaut-743349.postman.co/workspace/e4af8ee5-8665-4f2f-b55d-3e07ebd571f1/collection/32722295-4dd955d8-1be1-4d80-8740-87f465f23915?action=share&source=collection_link&creator=32722295"
+	},
+	"item": [
+		{
+			"name": "check-user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/check-user?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"check-user"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chat_id\":\"3\",\n    \"name\":\"kian2\",\n    \"username\":\"kian2\",\n    \"phone\":\"939\",\n    \"config_name\":\"kian2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/new-user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"new-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-configs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/get-configs?chat_id=828058149",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"get-configs"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-account-debt-history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/get-account-debt-history?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"get-account-debt-history"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "purchase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chat_id\":\"3\",\n    \"template_id\":22,\n    \"name\":\"ali_config\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/purchase",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/get-config?template_id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"get-config"
+					],
+					"query": [
+						{
+							"key": "template_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-config-link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/get-config-link?id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"get-config-link"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign-admin",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"relevantAdmin\":\"2\",\n    \"user_chat_id\":\"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/manager/assign-admin?chat_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"manager",
+						"assign-admin"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

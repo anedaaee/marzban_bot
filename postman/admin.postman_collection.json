@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "3b4cb705-205d-4150-b884-c4ff8401621d",
+		"name": "admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32722295",
+		"_collection_link": "https://universal-astronaut-743349.postman.co/workspace/e4af8ee5-8665-4f2f-b55d-3e07ebd571f1/collection/32722295-3b4cb705-205d-4150-b884-c4ff8401621d?action=share&source=collection_link&creator=32722295"
+	},
+	"item": [
+		{
+			"name": "get_users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/get_users?chat_id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"get_users"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reduce-user-debt",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\":12,\n    \"user_chat_id\":\"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/reduce-user-debt?chat_id=828058149",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"reduce-user-debt"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign-template",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"template_id\":12,\n    \"user_chat_id\":\"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/assign-template?chat_id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"assign-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-custom-templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/get-custom-templates?chat_id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"get-custom-templates"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-template",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"template_id\":2,\n    \"new_price\":40\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/add-template?chat_id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"add-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-admin-templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/get-admin-templates?chat_id=828058149",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"get-admin-templates"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/get-template?chat_id=828058149&template_id=8",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"get-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						},
+						{
+							"key": "template_id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-custom-template",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"template_id\":22\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/delete-custom-template?chat_id=828058149",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"delete-custom-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-custom-templates-for-assign",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/get-custom-templates-for-assign?chat_id=828058149&user_id=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"get-custom-templates-for-assign"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						},
+						{
+							"key": "user_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user-purchase-from-custom-template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/get-user-purchase-from-custom-template?chat_id=828058149&user_id=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"get-user-purchase-from-custom-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						},
+						{
+							"key": "user_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-assgined-custom-template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/get-assigned-custom-template?chat_id=828058149&user_id=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"get-assigned-custom-template"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						},
+						{
+							"key": "user_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-assignment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_chat_id\":\"3\",\n    \"template_id\":\"22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/delete-assignment?chat_id=828058149",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"delete-assignment"
+					],
+					"query": [
+						{
+							"key": "chat_id",
+							"value": "828058149"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
