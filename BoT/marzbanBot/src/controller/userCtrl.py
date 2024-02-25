@@ -37,7 +37,7 @@ class User:
         return response
 
     def getConfigLink(self,id):
-        response = requests.post(
+        response = requests.get(
             url=f"{self.url_prefix}/user/get-config-link?id={id}"
         )
         return response

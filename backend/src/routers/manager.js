@@ -288,7 +288,7 @@ router.post('/add-template', async(req,res) => {
             days_limit : Joi.number().optional(),
             data_limit : Joi.number().optional(),
             price : Joi.number().required(),
-            user_limit : Joi.string().optional(),
+            user_limit : Joi.number().optional(),
             in_bound: Joi.string().optional(),
         })
 

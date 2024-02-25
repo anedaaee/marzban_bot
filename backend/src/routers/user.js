@@ -165,22 +165,29 @@ router.post('/purchase', async(req,res) => {
 
         const values = await schema.validateAsync(req.body)
 
-        const condig = await userCtrl.purchase(values,req)
-
+        const config = await userCtrl.purchase(values,req)
+        console.log(config.data);
+ 
         res.status(200).send({
             "metadata": {
-                message : 'every thing is okay'
+                "message" : 'every thing is okay'
             },
             "body": {
                 "type": "object",
                 "data": {
-                    "config" : "configgg"
+                    "config" : {
+                        "expire": config.data.status == 'on_hold' && ! config.data.expire?  'not started yet' : config.data.expire,
+                        "data_limit": config.data.data_limit,
+                        "name":config.data.username,
+                        "status":config.data.status,
+                        "subscription_url":config.data.subscription_url
+                    }
                 }
             }
         })
 
     }catch(err){
-        console.log(err);
+        console.log(err); 
         let message = 'error happend bad request'
         
         if (err.details){
@@ -250,9 +257,10 @@ router.get('/get-config-link', async(req,res) => {
                 "type": "array",
                 "data": configLink
             }
-        })
+        }) 
 
     }catch(err){
+        console.log(err);
         let message = 'error happend bad request'
         
         if (err.details){

@@ -240,12 +240,16 @@ def buyTemplateWithName(message,bot,template_id,api_prefix):
 
         result = user.purchase(chat_id=chat_id,template_id=template_id,config_name=configName)
         if result.status_code == 200:
-            config = result.json()['body']['data']['config']
+            config = result.json()['body']['data']['config']['subscription_url']
+            name = result.json()['body']['data']['config']['name']
+            status = result.json()['body']['data']['config']['status']
 
             msg = f"""کانفیگ شما : \n\
 {config}\n\
 \n\n\nنام کانفیگ شما : \n\
-{configName}"""
+{name}\n\
+\n\n\nوضعیت کانفیگ شما : \n\
+{status}"""
 
             markup = InlineKeyboardMarkup()
             button = InlineKeyboardButton("تایید", callback_data='back_to_home')
@@ -300,12 +304,18 @@ def showConfigLinks(call,bot,api_prefix,id):
     try:
         user = User(api_prefix)
         result = user.getConfigLink(id)
+        print(result.json())
         if result.status_code == 200:
             result = result.json()['body']['data']
+            config = result['config']
             msg = f"""نام کانفیگ شما:\n\
 {result['config_name']}
 \n\n\n کانفیگ شما:\n\
-{result['config']}"""
+{config['subscription_url']}
+\n\n\n انقضا کانفیگ شما:\n\
+{config['expire']}
+\n\n\n وضعیت کانفیگ شما:\n\
+{config['status']}"""
 
             markup = InlineKeyboardMarkup()
             button = InlineKeyboardButton("بازگشت", callback_data='back_to_home')

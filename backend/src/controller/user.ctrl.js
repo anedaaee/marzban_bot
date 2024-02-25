@@ -1,4 +1,6 @@
 const request = require('../db/request')
+const axios = require('axios')
+require('dotenv').config(__dirname+'/.env')
 
 exports.checkUser = async (values,req) => {
     try{
@@ -113,6 +115,51 @@ exports.purchase = async (values,req) => {
             await request(query2,[price[0].whoCreated,today,price[0].parent_template_id,values.name],req)
         }
 
+        query = `SELECT days_limit, data_limit, template_id, price, user_limit, in_bounds, whoCreated, parent_template_id, isActive
+        FROM KianDB.templates
+        WHERE template_id=?;`
+
+        const tempalte = await request(query,[values.template_id],req)
+
+        const config = await generateConfig(tempalte[0],values)
+
+        return config
+    }catch(err){throw err}
+}
+
+const generateConfig = async(template,values) => {
+    try{
+        let expire , date = new Date()
+        if (template.days_limit == null){
+            expire = null
+        }else{
+            expire = Math.floor(date.getTime() / 1000) + 86400 * (template.days_limit + 1)
+        }
+        let data_limit = template.data_limit * 1024 ** 3
+        console.log(expire);
+        let payload = {
+            'username': values.name,
+            'proxies': {
+                'vless': {}
+            },
+            'inbounds': JSON.parse(template.in_bounds),
+            'on_hold_expire_duration': expire,
+            'status' : 'on_hold',
+            'data_limit': data_limit,
+            'data_limit_reset_strategy': 'no_reset'
+        }
+        console.log(payload); 
+        let headers = {
+            'accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.TOKEN}`
+        }
+
+        let url = `${process.env.PANEL_URL}/api/user`
+        
+        const config = await axios.post(url,payload,{headers,retry : false}) 
+
+        return config
     }catch(err){throw err}
 }
 
@@ -149,9 +196,34 @@ exports.getConfigLink = async (values,req) => {
 
         configName = configName[0]
 
+        let config = await getConfig(configName.name)
         return {
             config_name : configName.name,
-            config : 'config'
+            config : config
         }
+    }catch(err){throw err}
+}  
+
+const getConfig = async(configName) => {
+    try{
+
+        let headers = {
+            'accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.TOKEN}`
+        }
+
+        let url = `${process.env.PANEL_URL}/api/user/${configName}`
+        
+        const config = await axios.get(url,{headers,retry : false}) 
+
+        return {
+            "expire": config.data.status == 'on_hold' && ! config.data.expire?  'not started yet' : config.data.expire,
+            "data_limit": config.data.data_limit,
+            "name":config.data.username,
+            "status":config.data.status,
+            "subscription_url":config.data.subscription_url
+        }
+        
     }catch(err){throw err}
 }
