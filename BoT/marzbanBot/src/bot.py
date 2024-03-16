@@ -2,13 +2,14 @@ import json
 
 from dotenv import dotenv_values
 import telebot
+import os
 import requests
 from botController.botController import *
 
 env_vars = dotenv_values(".env")
 token = env_vars["BOT_TOKEN"]
-api_prefix = env_vars["BACKEND_URL"]
-
+# api_prefix = env_vars["BACKEND_URL"]
+api_prefix = os.environ.get('BACKEND_URL') 
 #initialize bot
 bot = telebot.TeleBot(token)
 

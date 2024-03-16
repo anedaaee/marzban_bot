@@ -10,6 +10,8 @@ COPY . .
 
 WORKDIR /app/marzbanBot/src
 
+ENV BACKEND_URL="http://167.99.248.242:3001/api"
+
 EXPOSE 8000
 
 CMD ["python","bot.py"]
