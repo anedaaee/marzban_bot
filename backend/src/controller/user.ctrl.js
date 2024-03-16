@@ -19,7 +19,7 @@ exports.checkUser = async (values,req) => {
                 user[0]['relevantAdminUsername'] = null
             }
         }else{
-            user[0]['relevantAdminUsername'] = null
+            
         }
         return user
     }catch(err){throw err}

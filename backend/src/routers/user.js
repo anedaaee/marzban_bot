@@ -32,6 +32,7 @@ router.get('/check-user', async(req,res) => {
         }
 
     }catch(err){
+        console.log(err);
         let message = 'error happend bad request'
         
         if (err.details){

@@ -3,10 +3,14 @@ import traceback
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton ,ReplyKeyboardRemove , InlineKeyboardMarkup, InlineKeyboardButton
 
-from src.controller.authCtrl import Authorization
-from src.controller.userCtrl import User
-from src.controller.managerCtrl import Manager
-from src.controller.adminCtrl import Admin
+import sys
+sys.path.append("/usr/src/app/marzbanBot/")  
+
+from .controller.authCtrl import Authorization
+from .controller.userCtrl import User
+from .controller.managerCtrl import Manager
+from .controller.adminCtrl import Admin
+
 
 from datetime import datetime
 import json
@@ -16,7 +20,6 @@ def startController(message,bot,api_prefix):
         chat_id = message.chat.id
         auth = Authorization(api_prefix)
         result = auth.checkUser(chat_id)
-
         if (result.status_code == 401):
             new_user(message,bot)
         elif result.status_code == 500:
